@@ -209,7 +209,8 @@ nav-links {
     height: 2px;
     background: #f44336;
     display: block;
-    margin: auto
+    margin: auto;
+    transition: 0.5s;
 }
 
 .nav-links ul li:hover::after{
@@ -219,8 +220,39 @@ nav-links {
 .text-box{
     width: 90%;
     color: #fff;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
+}
+
+.text-box h1{
+    font-size: 62px;
+}
+
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 20px;
+    color: #fff
+}
+
+@media(max-width: 700px){
+    .text-box h1{
+    font-size: 62px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links ul li{
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+        
+    }
 }
