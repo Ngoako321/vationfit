@@ -9,10 +9,7 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
     background: white;
-    padding: 40px 0;
 }
 
 
@@ -167,7 +164,7 @@ h2 {
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/ChatGPT\ Image\ Jan\ 5\,\ 2026\,\ 12_52_33\ PM.png);
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/fitness\ girl1.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -185,7 +182,7 @@ nav img{
     ;
 }
 
-nav-links {
+.nav-links {
     flex: 1;
     text-align: right;
 }
@@ -228,14 +225,19 @@ nav-links {
 }
 
 .text-box h1{
-    font-size: 62px;
+    font-size: 65px;
 }
 
-.text-box p{
-    margin: 10px 0 40px;
+.text-box h2 {
     font-size: 20px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 18px;
     color: #fff
 }
+
 
 @media(max-width: 700px){
     .text-box h1{
@@ -263,7 +265,7 @@ nav-links {
 }
 
 .products h2 {
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 30px;
 }
 
@@ -283,9 +285,9 @@ nav-links {
 
 .product-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    height: 120px;
+    object-fit: fill;
+    border-radius: 5px;
 }
 
 .product-card button {
@@ -299,4 +301,66 @@ nav-links {
 
 .product-card button:hover {
     background: red;
+}
+
+.cardio-wall {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/cardio\ wallp1.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.cardio-text h2 {
+    font-size: 35px;
+    font-style: italic;
+    color: #fff;
+}
+
+.cardio-text p {
+    margin-bottom: 20px;
+    color:#fff;
+}
+
+.cardiovascular {
+    padding: 30px 10%;
+    text-align: center;
+}
+.cardiovascular h2{
+    font-size: 30px;
+    font-style:oblique;
+}
+.cardio-products{
+    width: 30%;
+    background: #f4f4f4;
+    padding: 20px;;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.cardio-products img {
+    width: 100%;
+    height: 120px;
+    object-fit: fill;
+    border-radius: 5px;
+}
+
+.cardio-products button{
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;  
+}
+.cardio-products button:hover{
+    background: red;
+}
+.cardio {
+    padding: 30px 10%;
+    text-align: center;
+}
+.cardio h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
 }
