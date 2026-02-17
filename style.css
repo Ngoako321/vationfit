@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
+/* home Page */
 * {
     margin: 0;
     padding: 0;
@@ -269,6 +269,10 @@ nav img{
     margin-bottom: 30px;
 }
 
+.products h3 {
+    font-size: 12px;
+}
+
 .product-container {
     display: flex;
     justify-content: space-between;
@@ -293,7 +297,7 @@ nav img{
 .product-card button {
     background: red;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -302,6 +306,8 @@ nav img{
 .product-card button:hover {
     background: red;
 }
+
+/* Cardio Page */
 
 .cardio-wall {
     min-height: 100vh;
@@ -327,15 +333,27 @@ nav img{
     text-align: center;
 }
 .cardiovascular h2{
+    margin: 
     font-size: 30px;
     font-style:oblique;
 }
-.cardio-products{
+
+.cardiocascular {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+}
+
+.cardio-products {
     width: 30%;
     background: #f4f4f4;
     padding: 20px;;
     margin-bottom: 20px;
     border-radius: 10px;
+}
+
+.cardio-products {
+    font-size: 12px;
 }
 
 .cardio-products img {
@@ -348,7 +366,7 @@ nav img{
 .cardio-products button{
     background: red;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;  
@@ -360,7 +378,216 @@ nav img{
     padding: 30px 10%;
     text-align: center;
 }
+.cardio-text {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.cardio {
+    padding: 30px 10%;
+    text-align: center;
+}
+
 .cardio h2 {
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 30px;
+}
+
+/* Strength Page */
+
+.strength-wall {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/strength\ workout.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.strength-text h2 {
+    font-size: 35px;
+    font-style: italic;
+    color: #fff;
+}
+
+.strength-text p {
+    margin-bottom: 20px;
+    color:#fff;
+}
+
+.strength-trainer {
+    padding: 30px 10%;
+    text-align: center;
+}
+.strength-trainer h2{
+    margin: 
+    font-size: 30px;
+    font-style:oblique;
+}
+
+.strength-trainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+}
+
+.strength-products {
+    width: 30%;
+    background: #f4f4f4;
+    padding: 20px;;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.strength-products {
+    font-size: 12px;
+}
+
+.strength-products img {
+    width: 100%;
+    height: 120px;
+    object-fit: fill;
+    border-radius: 5px;
+}
+
+.strength-products button{
+    background: red;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;  
+}
+.strength-products button:hover{
+    background: red;
+}
+.strength {
+    padding: 30px 10%;
+    text-align: center;
+}
+.strength-text {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.strength {
+    padding: 30px 10%;
+    text-align: center;
+}
+
+.strength h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+/*   Functional Page  */
+
+.functional-wall {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/functional\ workouts.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.functional-text h2 {
+    font-size: 35px;
+    font-style: italic;
+    color: #fff;
+}
+
+.functional-text p {
+    margin-bottom: 20px;
+    color:#fff;
+}
+
+.functionality {
+    padding: 30px 10%;
+    text-align: center;
+}
+.functionality h2{
+    margin: 
+    font-size: 30px;
+    font-style:oblique;
+}
+
+.functionality {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+}
+
+.functional-products {
+    width: 30%;
+    background: #f4f4f4;
+    padding: 20px;;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.functional-products {
+    font-size: 12px;
+}
+
+.functional-products img {
+    width: 100%;
+    height: 120px;
+    object-fit: fill;
+    border-radius: 5px;
+}
+
+.functional-products button{
+    background: red;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;  
+}
+.functional-products button:hover{
+    background: red;
+}
+.functional {
+    padding: 30px 10%;
+    text-align: center;
+}
+.function-text {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.functional {
+    padding: 30px 10%;
+    text-align: center;
+}
+
+.functional h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+/*  On Sale Page  */
+
+.on sale-wall {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/Gym\ models1.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
