@@ -6,6 +6,7 @@
     <title> THEVATIONFITNESS </title>
     <!-- link to external CSS -->
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
 
@@ -13,8 +14,14 @@
         <nav>
             <a href="Home.html"><img src="images/Fitness Logo.jpg"></a>
 
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <!----Navigation bar-->
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <ul>
                     <!----links for the pages-->
                     <li><a href="Home.html">Home</a></li>
@@ -81,7 +88,26 @@
         </div>
 
     </div>
-</section>
 
+        <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>THEVATIONFITNESS</h3>
+            <p>
+                Trusted by fitness professionals & fitness facilities across Africa for over 15 years,
+                we are your reputable gym equipment supplier.
+            </p>
+
+
+
+            <a href="Signup.html" class="footer-signup-btn">Sign Up</a>
+        </div>
+
+
+    </div>
+</footer>
+</section>
+<script src="app.js"></script>
 </body>
 </html>

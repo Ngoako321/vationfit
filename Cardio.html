@@ -13,8 +13,14 @@
         <nav>
             <a href="Home.html"><img src="images/Fitness Logo.jpg"></a>
 
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <!----Navigation bar-->
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <ul>
                     <!----links for the pages-->
                     <li><a href="Home.html">Home</a></li>
@@ -26,6 +32,7 @@
                 </ul>
             </div>
         </nav>
+
     <div class="cardio-text">
         <h2>Our Cardio Equipment</h2>
         <p>Our cardio machines are designed to help you build endurance, burn fat, and improve overall cardiovascular health. Whether your goal is weight loss, increased stamina, or heart health, our equipment delivers smooth performance, durability, and comfort with every workout.</p>
@@ -39,7 +46,7 @@
     <h2>CARDIOVASCULAR EQUIPMENT</h2>
 
     <div class="cardiocascular">
-        
+
         <div class="cardio-products">
         <img src="images/Air Bike.png" alt="airbike1">
         <h3>Air Bike</h3>
@@ -104,7 +111,25 @@
         <button>Add To Cart</button>
     </div>
 </div>
-  
+    <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>THEVATIONFITNESS</h3>
+            <p>
+                Trusted by fitness professionals & fitness facilities across Africa for over 15 years,
+                we are your reputable gym equipment supplier.
+            </p>
+
+
+
+            <a href="Signup.html" class="footer-signup-btn">Sign Up</a>
+        </div>
+
+
+    </div>
+</footer>
     </section>
+    <script src="app.js"></script>
 </body>
 </html>

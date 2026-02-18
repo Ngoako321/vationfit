@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* home Page */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -8,158 +9,177 @@
     font-family: "Poppins", sans-serif;
 }
 
+/* BODY */
 body {
     background: white;
 }
 
+/* LOGO & COMPANY NAME */
+.logo {
+    display: block;
+    margin: 20px auto 10px;
+    width: 90px;
+    height: auto;
+}
 
 .company-name {
-    text-decoration: solid;
     text-align: center;
     font-size: 32px;
     font-weight: bolder;
     color: black;
-    margin-bottom: 10px;
     letter-spacing: 2px;
+    margin-bottom: 20px;
 }
 
-.logo {
-    display: block;
-    margin: 0 auto 10px;
-    width: 90px;      
-    height: auto;
-}
-
-.wrapper{
+/* FORM WRAPPER */
+.wrapper {
     width: 420px;
     background: black;
     color: white;
-    border-radius: 10px ;
-    padding: 30px 40px;
+    border-radius: 10px;
+    padding: 30px 40px 40px;
+    margin: 0 auto 50px;
 }
 
+/* SIGNUP WRAPPER */
+.wrapper.signup {
+    padding-bottom: 40px;
+}
+
+/* HEADINGS */
 .wrapper h1 {
     font-size: 36px;
     text-align: center;
-    margin: 20px 0 15px;
+    margin-bottom: 20px;
 }
 
-.wrapper .input-box {
+h2 {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+/* INPUT BOX */
+.input-box {
     position: relative;
     width: 100%;
     height: 50px;
     background: white;
-    margin: 30px 0;
+    margin: 20px 0;
+    border-radius: 40px;
 }
 
+/* INPUT FIELD */
 .input-box input {
     width: 100%;
     height: 100%;
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(215, 215, 215, 0.2);
+    border: 2px solid rgba(215, 215, 215, 0.4);
     border-radius: 40px;
     font-size: 16px;
     color: #333;
-    padding: 20px 45px 20px 20px;
+    padding: 0 20px;
 }
 
-.input-box input ::placeholder{
-    color: #fff;
+/* PLACEHOLDER FIX */
+.input-box input::placeholder {
+    color: #999;
 }
 
-.input-box input ::placeholder {
-    color: #fff;
-}
-
-.input-box i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-}
-
-.wrapper .remember-forgot{
+/* DATE OF BIRTH */
+.dob {
     display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.remember-forgot label input {
-    accent-color: #fff;
-    margin-right: 3px;
-}
-
-.remember-forgot a{
-    color: red;
-    text-decoration: none;
-}
-
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
-
-.wrapper .btn {
-    width: 100%;
-    height: 45px;
-    background: #fff;
+.dob select {
+    flex: 1;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
     border: none;
     outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0,0,0, .1);
-    cursor: pointer;
-    font: size 16px; 
-    color: #333;
+}
+
+/* TERMS & CONDITIONS */
+.terms {
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+.terms input {
+    margin-right: 6px;
+}
+
+.terms a {
+    color: red;
+    text-decoration: none;
     font-weight: 600;
 }
 
-.wrapper .register-link {
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: #f2f2f2;
+}
+
+/* LOGIN LINK */
+.register-link {
     font-size: 14.5px;
     text-align: center;
     margin-top: 20px;
 }
 
-.register-link p a {
+.register-link a {
     color: red;
     text-decoration: none;
     font-weight: 600;
 }
 
-.register-link p a:hover{
+.register-link a:hover {
     text-decoration: underline;
 }
 
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .wrapper {
+        width: 90%;
+        padding: 25px;
+    }
 
-.form-box {
-    height: auto;
+    .company-name {
+        font-size: 26px;
+    }
+
+    .wrapper h1 {
+        font-size: 28px;
+    }
+
+    .dob {
+        flex-direction: column;
+    }
 }
 
-.wrapper .sign up {
-    width: 420px;
-    padding-bottom: 40px;
-}
-
-select {
-    font-size: 15px;
-    padding: 10px;
-    background: #fff;
-    box-sizing: border-box;
-}
-
-h2 {
-    font-size: 15px;
-}
-
-.input-box3 {
-    margin-top: 15px;
-}
-
-.btn3 {
-    margin-bottom: 10px;
-}
 
 .header{
     min-height: 100vh;
@@ -224,6 +244,69 @@ nav img{
     text-align: center;
 }
 
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001; /* make sure it's on top */
+}
+
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100%;
+        background: #111;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-links ul li {
+        display: block;
+        margin: 20px 0;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Hamburger animation to X */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+
 .text-box h1{
     font-size: 65px;
 }
@@ -238,26 +321,6 @@ nav img{
     color: #fff
 }
 
-
-@media(max-width: 700px){
-    .text-box h1{
-    font-size: 62px;
-    }
-    .nav-links ul li{
-        display: block;
-    }
-    .nav-links ul li{
-        position: absolute;
-        background: #f44336;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: 0;
-        text-align: left;
-        z-index: 2;
-        
-    }
-}
 
 .products {
     padding: 30px 10%;
@@ -596,3 +659,146 @@ nav img{
     background-size: cover;
     position: relative;
 }
+
+
+/*  Contact Page */
+
+.contact-wall {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/Gym\ models1.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Header */
+.contact-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-header h1 {
+    color: #f4f4f4;
+    font-size: 40px;
+    font-style:italic;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 6px solid #951911; /* Thick underline */
+    padding-bottom: 10px;
+}
+
+.contact-header p {
+    margin-top: 15px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Contact Boxes */
+.contact-box {
+    background: white;
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.contact-box:hover {
+    transform: translateY(-10px);
+}
+
+.contact-box h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 4px solid #951911;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.contact-box p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: #555;
+    margin: 12px 0;
+}
+
+.contact-box i {
+    font-size: 22px;
+    color: #951911;
+}
+
+.footer {
+    background: #111;
+    color: white;
+    padding: 40px 10%;
+    margin-top: 80px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-box h3 {
+    margin-bottom: 15px;
+    border-bottom: 3px solid #951911;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-box p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    color: #ccc;
+}
+
+.footer-box i {
+    color: #951911;
+    font-size: 18px;
+}
+
+.footer-signup-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #951911;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-signup-btn:hover {
+    background: #951911;
+}
+
