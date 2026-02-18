@@ -352,6 +352,7 @@ nav img{
     border-radius: 10px;
 }
 
+
 .cardio-products {
     font-size: 12px;
 }
@@ -366,7 +367,7 @@ nav img{
 .cardio-products button{
     background: red;
     color: white;
-    padding: 5px 20px;
+    padding: 5px 10px;
     border: none;
     cursor: pointer;
     border-radius: 5px;  
@@ -416,16 +417,16 @@ nav img{
 }
 
 .strength-text p {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color:#fff;
 }
 
 .strength-trainer {
-    padding: 30px 10%;
+    padding: 10px 5%;
     text-align: center;
 }
 .strength-trainer h2{
-    margin: 
+    margin:
     font-size: 30px;
     font-style:oblique;
 }
@@ -440,11 +441,15 @@ nav img{
     width: 30%;
     background: #f4f4f4;
     padding: 20px;;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 10px;
 }
 
 .strength-products {
+    font-size: 10px;
+}
+
+.strength-products p{
     font-size: 12px;
 }
 
@@ -458,7 +463,7 @@ nav img{
 .strength-products button{
     background: red;
     color: white;
-    padding: 5px 20px;
+    padding: 5px 10px;
     border: none;
     cursor: pointer;
     border-radius: 5px;  
@@ -558,10 +563,10 @@ nav img{
     background: red;
 }
 .functional {
-    padding: 30px 10%;
+    padding: 10px 5%;
     text-align: center;
 }
-.function-text {
+.functional-text {
     width: 90%;
     color: #fff;
     position: absolute;
@@ -572,7 +577,7 @@ nav img{
 }
 
 .functional {
-    padding: 30px 10%;
+    padding: 10px 5%;
     text-align: center;
 }
 
@@ -583,7 +588,7 @@ nav img{
 
 /*  On Sale Page  */
 
-.on sale-wall {
+.onsale-wall {
     min-height: 100vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/Gym\ models1.png);
