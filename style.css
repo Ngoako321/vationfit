@@ -234,6 +234,27 @@ nav img{
     width: 100%;
 }
 
+
+
+.sliderWrapper {
+    clip-path: polygon(25% 15%, 90% 13%, 80% 75%, 15% 78%);
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 40%;
+}
+
+
+.searchInput {
+    border: none;
+    border-color: transparent;
+}
+
 .text-box{
     width: 90%;
     color: #fff;
@@ -248,39 +269,30 @@ nav img{
 .hamburger {
     display: none;
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 22px;
     cursor: pointer;
-    z-index: 1001; /* make sure it's on top */
+    gap: 5px;
 }
 
 .hamburger span {
     height: 3px;
-    width: 100%;
+    width: 25px;
     background: white;
     border-radius: 2px;
-    transition: all 0.3s ease;
 }
 
-/* Mobile menu */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
+/* Mobile responsive */
+@media (max-width: 500px) {
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
         width: 250px;
         height: 100%;
-        background: #111;
+        background: grey;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: right 0.3s ease;
-        z-index: 1000;
+        transition: 0.3s;
     }
 
     .nav-links ul li {
@@ -288,21 +300,12 @@ nav img{
         margin: 20px 0;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links.active {
         right: 0;
-    }
-
-    /* Hamburger animation to X */
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
 
@@ -325,11 +328,18 @@ nav img{
 .products {
     padding: 30px 10%;
     text-align: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(images/nordwood-themes-9a58YsGiTPk-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
 .products h2 {
     font-size: 40px;
     margin-bottom: 30px;
+    color: white;
 }
 
 .products h3 {
@@ -391,17 +401,8 @@ nav img{
     color:#fff;
 }
 
-.cardiovascular {
-    padding: 30px 10%;
-    text-align: center;
-}
-.cardiovascular h2{
-    margin: 
-    font-size: 30px;
-    font-style:oblique;
-}
 
-.cardiocascular {
+.cardiovascular {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;    
@@ -455,11 +456,18 @@ nav img{
 .cardio {
     padding: 30px 10%;
     text-align: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(images/nordwood-themes-9a58YsGiTPk-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
 .cardio h2 {
     font-size: 40px;
     margin-bottom: 30px;
+    color: white;
 }
 
 /* Strength Page */
@@ -489,7 +497,6 @@ nav img{
     text-align: center;
 }
 .strength-trainer h2{
-    margin:
     font-size: 30px;
     font-style:oblique;
 }
@@ -534,10 +541,7 @@ nav img{
 .strength-products button:hover{
     background: red;
 }
-.strength {
-    padding: 30px 10%;
-    text-align: center;
-}
+
 .strength-text {
     width: 90%;
     color: #fff;
@@ -551,11 +555,18 @@ nav img{
 .strength {
     padding: 30px 10%;
     text-align: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(images/nordwood-themes-9a58YsGiTPk-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
 .strength h2 {
     font-size: 40px;
     margin-bottom: 30px;
+    color: white;
 }
 
 /*   Functional Page  */
@@ -584,7 +595,6 @@ nav img{
     text-align: center;
 }
 .functionality h2{
-    margin: 
     font-size: 30px;
     font-style:oblique;
 }
@@ -625,10 +635,7 @@ nav img{
 .functional-products button:hover{
     background: red;
 }
-.functional {
-    padding: 10px 5%;
-    text-align: center;
-}
+
 .functional-text {
     width: 90%;
     color: #fff;
@@ -642,11 +649,18 @@ nav img{
 .functional {
     padding: 10px 5%;
     text-align: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(images/nordwood-themes-9a58YsGiTPk-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
 .functional h2 {
     font-size: 40px;
     margin-bottom: 30px;
+    color: white;
 }
 
 /*  On Sale Page  */
@@ -703,9 +717,9 @@ body {
 
 .contact-header p {
     margin-top: 15px;
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: 2px;
-    color: black;
+    color: gray;
 }
 
 /* Contact Container */
