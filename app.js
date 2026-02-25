@@ -4,4 +4,10 @@ function toggleMenu(hamburger) {
 }
 
 
+const buttons = document.querySelectorAll("addToCart");
 
+buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        alert("Item added to cart!");
+    });
+});
