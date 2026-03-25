@@ -243,16 +243,24 @@ nav img{
 .search {
     display: flex;
     align-items: center;
-    background-color: gray;
-    padding: 5px 10px;
-    border-radius: 10px;
-    width: 40%;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 30px;
+    width: 150px;
+    margin-right: 20px;
 }
 
 
 .searchInput {
     border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
     border-color: transparent;
+}
+
+.searchInput::placeholder {
+    color: #888
 }
 
 .text-box{
@@ -814,5 +822,55 @@ body {
 
 .footer-signup-btn:hover {
     background: #951911;
+}
+
+.product-detals {
+    text-align: center;
+    padding: 20px;
+}
+
+.main-img {
+    width: 300px;
+    margin: 20px 0;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.thumb {
+    width: 80px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+
+.thumb:hover {
+    border: 2px solid #000
+}
+
+.dark-page {
+    background-color: grey;
+    color: white;
+}
+
+.dumbell1 img {
+    padding: 5px;
+    margin-top: 50px;
+    margin-left: 20px;
+    height: 300px;
+    width: 50%;
+}
+
+.group {
+    display: flex;
+    gap: 10px;
+}
+
+.small-img img{
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
 }
 
