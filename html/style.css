@@ -187,7 +187,7 @@ h2 {
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/fitness\ girl1.png);
     background-position: center;
     background-size: cover;
-    position: relative;
+    position: sticky;
 }
 
 nav{
@@ -236,33 +236,6 @@ nav img{
 
 
 
-.sliderWrapper {
-    clip-path: polygon(25% 15%, 90% 13%, 80% 75%, 15% 78%);
-}
-
-.search {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 8px 12px;
-    border-radius: 30px;
-    width: 150px;
-    margin-right: 20px;
-}
-
-
-.searchInput {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-size: 14px;
-    border-color: transparent;
-}
-
-.searchInput::placeholder {
-    color: #888
-}
-
 .text-box{
     width: 90%;
     color: #fff;
@@ -272,20 +245,13 @@ nav img{
     transform: translate(-50%,-50%);
     text-align: center;
 }
-
-/* Hamburger icon */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
+.text-box h1 {
+    font-family: fantasy;
 }
 
-.hamburger span {
-    height: 3px;
-    width: 25px;
-    background: white;
-    border-radius: 2px;
+.text-box h2 {
+    font-family:monospace;
+    color: #951911;
 }
 
 /* Mobile responsive */
@@ -308,9 +274,6 @@ nav img{
         margin: 20px 0;
     }
 
-    .hamburger {
-        display: flex;
-    }
 
     .nav-links.active {
         right: 0;
