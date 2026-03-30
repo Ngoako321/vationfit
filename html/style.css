@@ -187,14 +187,19 @@ h2 {
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/fitness\ girl1.png);
     background-position: center;
     background-size: cover;
-    position: sticky;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    z-index: 999;
 }
 
-nav{
+.navbar{
     display: flex;
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 nav img{
@@ -304,7 +309,6 @@ nav img{
     background-image: url(images/nordwood-themes-9a58YsGiTPk-unsplash.jpg);
     background-position: center;
     background-size: cover;
-    position: relative;
 }
 
 .products h2 {
@@ -314,6 +318,10 @@ nav img{
 }
 
 .products h3 {
+    font-size: 15px;
+}
+
+.products p{
     font-size: 12px;
 }
 
@@ -324,15 +332,15 @@ nav img{
 }
 
 .product-card {
-    width: 30%;
-    background: #f4f4f4;
+    width: 28%;
+    background: rgb(174, 168, 168);
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
 .product-card img {
-    width: 100%;
+    width: 80%;
     height: 120px;
     object-fit: fill;
     border-radius: 5px;
@@ -351,6 +359,22 @@ nav img{
     background: red;
 }
 
+/* social icons */
+.social-icon {
+    margin-top: 20px;
+}
+
+.social-icon a {
+    color: white;
+    font-size: 30px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icon a:hover{
+    color: #951911;
+}
 /* Cardio Page */
 
 .cardio-wall {
@@ -381,9 +405,9 @@ nav img{
 
 .cardio-products {
     width: 30%;
-    background: #f4f4f4;
-    padding: 20px;;
-    margin-bottom: 20px;
+    background: rgb(174, 168, 168);
+    padding: 20px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
@@ -393,7 +417,7 @@ nav img{
 }
 
 .cardio-products img {
-    width: 100%;
+    width: 80%;
     height: 120px;
     object-fit: fill;
     border-radius: 5px;
@@ -480,9 +504,9 @@ nav img{
 
 .strength-products {
     width: 30%;
-    background: #f4f4f4;
-    padding: 20px;;
-    margin-bottom: 15px;
+    background: rgb(174, 168, 168);
+    padding: 20px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
@@ -495,7 +519,7 @@ nav img{
 }
 
 .strength-products img {
-    width: 100%;
+    width: 80%;
     height: 120px;
     object-fit: fill;
     border-radius: 5px;
@@ -578,9 +602,9 @@ nav img{
 
 .functional-products {
     width: 30%;
-    background: #f4f4f4;
-    padding: 20px;;
-    margin-bottom: 20px;
+    background: rgb(174, 168, 168);
+    padding: 20px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
@@ -589,7 +613,7 @@ nav img{
 }
 
 .functional-products img {
-    width: 100%;
+    width: 80%;
     height: 120px;
     object-fit: fill;
     border-radius: 5px;
