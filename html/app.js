@@ -1,3 +1,16 @@
+const toggleBtn = document.querySelector(".navbar-toggle");
+const navLinks = document.getElementById("navLinks");
+
+toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
+
 const buttons = document.querySelectorAll(".addToCart");
 
 let cart = [];

@@ -193,13 +193,21 @@ h2 {
 }
 
 .navbar{
-    display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px;
+
+    background: rgba(0, 0, 0, 0.4); /* transparent background */
+    backdrop-filter: blur(10px);   /* blur effect */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    z-index: 1000;   
 }
 
 nav img{
@@ -210,6 +218,8 @@ nav img{
 .nav-links {
     flex: 1;
     text-align: right;
+    z-index: 998;
+    transition: right 0.4s ease;
 }
 
 .nav-links ul li{
@@ -239,6 +249,21 @@ nav img{
     width: 100%;
 }
 
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: white;
+    transition: all 0.3s ease-in-out;
+}
 
 
 .text-box{
@@ -260,31 +285,38 @@ nav img{
 }
 
 /* Mobile responsive */
-@media (max-width: 500px) {
+@media (max-width: 880px) {
+
+    .navbar-toggle {
+        display: block;
+        z-index: 999;
+    }
     .nav-links {
-        position: fixed;
+        position: absolute;
         top: 0;
-        right: -100%;
-        width: 250px;
-        height: 100%;
-        background: grey;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        right: -100%; /* hidden by default */
+        height: 100vh;
+        width: 200px;
+        background: black;
+        text-align: left;
         transition: 0.3s;
+        padding-top: 60px;
+    }
+    .nav-links ul {
+        padding: 0;
     }
 
     .nav-links ul li {
         display: block;
-        margin: 20px 0;
+        padding: 15px 20px;
     }
-
-
     .nav-links.active {
-        right: 0;
+        right: 0; /* slides in */
+    }
+    .bar {
+        background: white;
     }
 }
-
 
 .text-box h1{
     font-size: 65px;
@@ -384,7 +416,10 @@ nav img{
     background-position: center;
     background-size: cover;
     position: relative;
+    
 }
+
+
 .cardio-text h2 {
     font-size: 35px;
     font-style: italic;
@@ -978,3 +1013,4 @@ body {
         display: flex;
     }
 }
+
