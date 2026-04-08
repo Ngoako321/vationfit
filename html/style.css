@@ -1014,3 +1014,24 @@ body {
         display: flex;
     }
 }
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+        
+h1, h2 {
+    color: #222;
+}
+
+p { 
+    color: #555;
+
+}
+
+ul {
+    margin-left: 20px;
+        }
