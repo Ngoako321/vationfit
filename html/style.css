@@ -6,12 +6,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
 
 /* BODY */
 body {
     background: white;
+    font-family: "Poppins", sans-serif;
 }
 
 /* LOGO & COMPANY NAME */
@@ -232,7 +232,7 @@ nav img{
 .nav-links ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .nav-links ul li::after{
@@ -914,16 +914,17 @@ body {
     border-radius: 10px;
 }
 
-.small-img.group {
+.small-img-group {
     display: flex;
     margin-top: 10px;
     gap: 10px;
 }
 
 .small-img img {
-    width: 200px;
+    width: 150px;
+    height: 150px;
     cursor: pointer;
-    border-radius: 5px;
+    overflow: hidden;
     transition: 0.3s;
 }
 
@@ -1013,4 +1014,3 @@ body {
         display: flex;
     }
 }
-
