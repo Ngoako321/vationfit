@@ -1,7 +1,9 @@
 const toggleBtn = document.querySelector(".navbar-toggle");
 const navLinks = document.getElementById("navLinks");
-const signupForm = document.getElementById("signupForm");
 
+
+// sign up form page
+const signupForm = document.getElementById("signupForm");
 const month = document.getElementById("month")?.value;
 const day = document.getElementById("day")?.value;
 const year = document.getElementById("year")?.value;
@@ -93,6 +95,55 @@ function togglePassword() {
     }
 }
 
+// login
+
+const loginForm = document.getElementById("login");
+
+if (loginForm) {
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // stops refresh
+
+        const username = document.getElementById("user").value.trim();
+        const password =  document.getElementById("pass").value.trim();
+
+        if (!username || !password) {
+            alert("Please enter username and password.");
+            return;
+        }
+
+        // Gets users from local storage
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Find user (case insensitive)
+
+        const foundUser = users.find(user => user.username.tolowerCase() === username.tolowerCase();
+    );
+
+    if (!foundUser) {
+        alert("User not found. Please sign up first.");
+        return;
+    }
+
+    if (foundUser.password != password) {
+        alert("Incorrect password.");
+        return;
+    }
+
+    alert("Login successful! Welcome" + foundUser.name);
+
+    // save logged-in user
+    localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+
+
+    window.location.href = "Home.html";
+    });
+}
+
+// navbar 
+const toggleBtn = document.querySelector(".navbar-toggle");
+const navLinks = document.getElementById("navLinks");
+
+
 toggleBtn.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
@@ -118,3 +169,4 @@ buttons.forEach(button => {
         alert(`${name} added to cart`);
     });
 });
+
