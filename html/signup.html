@@ -29,7 +29,7 @@
 <!----DoB-->
             <h2>Date of Birth</h2>
             <div class="dob">
-                <select required>
+                <select id="month" required>
                     <option>Month</option>
                     <option>January</option>
                     <option>February</option>
@@ -45,7 +45,7 @@
                     <option>December</option>
                 </select>
 
-                <select required>
+                <select id="day" required>
                     <option>Day</option>
                     <option>1</option>
                     <option>2</option>
@@ -80,7 +80,7 @@
                     <option>31</option>
                 </select>
 
-                <select required>
+                <select id="year" required>
                     <option>Year</option>
                     <option>2005</option>
                     <option>2004</option>
@@ -132,8 +132,7 @@
                     <option>1958</option>                 
                     <option>1957</option>                 
                     <option>1956</option>                 
-                    <option>1954</option>                 
-                    <option>1954</option>                 
+                    <option>1954</option>                                 
                     <option>1953</option>                 
                     <option>1952</option>                 
                     <option>1951</option>                 
@@ -157,7 +156,17 @@
                     <option>1933</option>                 
                     <option>1932</option>                 
                     <option>1931</option>                 
-                    <option>1930</option>     
+                    <option>1930</option> 
+                    <option>1929</option> 
+                    <option>1928</option> 
+                    <option>1927</option> 
+                    <option>1926</option> 
+                    <option>1925</option> 
+                    <option>1924</option> 
+                    <option>1923</option> 
+                    <option>1922</option> 
+                    <option>1921</option> 
+                    <option>1920</option> 
 
                 </select>
             </div>
@@ -175,6 +184,12 @@
             <!----confirm-password-->
             <div class="input-box">
                 <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+
+            <div class="show-password">
+                <label>
+                    <input type="checkbox" onclick="togglePassword()"> Show Password
+                </label>
             </div>
 
             <div class="terms">

@@ -2,7 +2,9 @@ const toggleBtn = document.querySelector(".navbar-toggle");
 const navLinks = document.getElementById("navLinks");
 const signupForm = document.getElementById("signupForm");
 
-const signupForm = document.getElementById("signupForm");
+const month = document.getElementById("month")?.value;
+const day = document.getElementById("day")?.value;
+const year = document.getElementById("year")?.value;
 
 if (signupForm) {
     signupForm.addEventListener("submit", function (event) {
@@ -28,7 +30,7 @@ if (signupForm) {
             return;
         }
 
-        if (month === "Month" || day === "Day" || year === "Year") {
+        if (!month || !day || !year) {
             alert("Please select your full date of birth.");
             return;
         }
@@ -46,7 +48,9 @@ if (signupForm) {
         // Check if user already exists
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        const userExists = users.find(user => user.email === email);
+        const userExists = users.find(user => user.email === email
+
+        );
 
         if (userExists) {
             alert("An account with this email already exists.");
@@ -73,6 +77,20 @@ if (signupForm) {
         // Redirect to login page
         window.location.href = "index.html";
     });
+}
+
+function togglePassword() {
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+
+    if (password.type === "password") {
+        password.type = "text";
+        confirmPassword.type = "text";
+    }
+    else {
+        password.type = "password";
+        confirmPassword.type = "password";
+    }
 }
 
 toggleBtn.addEventListener("click", () => {
