@@ -1,18 +1,39 @@
-const toggleBtn = document.querySelector(".navbar-toggle");
-const navLinks = document.getElementById("navLinks");
+// ===================== NAVBAR =====================
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector(".navbar-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
+    if (!toggleBtn || !navLinks) return;
 
-// sign up form page
+    toggleBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        toggleBtn.classList.toggle("open"); // animate hamburger
+    });
+
+    // Close menu when any nav link is clicked
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            toggleBtn.classList.remove("open");
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+            navLinks.classList.remove("active");
+            toggleBtn.classList.remove("open");
+        }
+    });
+});
+
+// ===================== SIGN UP =====================
 const signupForm = document.getElementById("signupForm");
-const month = document.getElementById("month")?.value;
-const day = document.getElementById("day")?.value;
-const year = document.getElementById("year")?.value;
 
 if (signupForm) {
     signupForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // stop page refresh
+        event.preventDefault();
 
-        // Get all values
         const name = document.getElementById("name").value.trim();
         const surname = document.getElementById("surname").value.trim();
         const username = document.getElementById("username").value.trim();
@@ -20,13 +41,11 @@ if (signupForm) {
         const password = document.getElementById("password").value.trim();
         const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-        // Get DOB values
         const dobSelects = document.querySelectorAll(".dob select");
         const month = dobSelects[0].value;
         const day = dobSelects[1].value;
         const year = dobSelects[2].value;
 
-        // Validation
         if (!name || !surname || !username || !email || !password || !confirmPassword) {
             alert("Please fill in all fields.");
             return;
@@ -47,126 +66,179 @@ if (signupForm) {
             return;
         }
 
-        // Check if user already exists
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        const userExists = users.find(user => user.email === email
-
-        );
+        const userExists = users.find(user => user.email === email);
 
         if (userExists) {
             alert("An account with this email already exists.");
             return;
         }
 
-        // Create user object
-        const newUser = {
+        users.push({
             name,
             surname,
             username,
             email,
             password,
             dob: `${day} ${month} ${year}`
-        };
+        });
 
-        // Save user
-        users.push(newUser);
         localStorage.setItem("users", JSON.stringify(users));
 
-        // Success
         alert("Account created successfully!");
-
-        // Redirect to login page
         window.location.href = "index.html";
     });
 }
 
-function togglePassword() {
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirmPassword");
-
-    if (password.type === "password") {
-        password.type = "text";
-        confirmPassword.type = "text";
-    }
-    else {
-        password.type = "password";
-        confirmPassword.type = "password";
-    }
-}
-
-// login
-
+// ===================== LOGIN =====================
 const loginForm = document.getElementById("login");
 
 if (loginForm) {
     loginForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // stops refresh
+        event.preventDefault();
 
         const username = document.getElementById("user").value.trim();
-        const password =  document.getElementById("pass").value.trim();
+        const password = document.getElementById("pass").value.trim();
 
         if (!username || !password) {
             alert("Please enter username and password.");
             return;
         }
 
-        // Gets users from local storage
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        // Find user (case insensitive)
+        const foundUser = users.find(
+            user => user.username.toLowerCase() === username.toLowerCase()
+        );
 
-        const foundUser = users.find(user => user.username.tolowerCase() === username.tolowerCase();
-    );
+        if (!foundUser) {
+            alert("User not found. Please sign up first.");
+            return;
+        }
 
-    if (!foundUser) {
-        alert("User not found. Please sign up first.");
-        return;
-    }
+        if (foundUser.password !== password) {
+            alert("Incorrect password.");
+            return;
+        }
 
-    if (foundUser.password != password) {
-        alert("Incorrect password.");
-        return;
-    }
+        alert("Login successful! Welcome " + foundUser.name);
 
-    alert("Login successful! Welcome" + foundUser.name);
+        localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
 
-    // save logged-in user
-    localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
-
-
-    window.location.href = "Home.html";
+        window.location.href = "Home.html";
     });
 }
 
-// navbar 
-const toggleBtn = document.querySelector(".navbar-toggle");
-const navLinks = document.getElementById("navLinks");
+// ===================== CART =====================
 
+const cartIcon = document.querySelector("#cart-icon");
+const cartBox = document.querySelector(".cart");
+const cartClose = document.querySelector("#cart-close");
+const cartContent = document.querySelector(".cart-content");
 
-toggleBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
+if (cartIcon && cartBox && cartClose) {
+    cartIcon.addEventListener("click", () => cartBox.classList.add("active"));
+    cartClose.addEventListener("click", () => cartBox.classList.remove("active"));
+}
 
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
-});
-
+//------------ADD To Cart ---------------\
 const buttons = document.querySelectorAll(".addToCart");
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const name = button.getAttribute("data-name");
-        const price = parseFloat(button.getAttribute("data-price"));
+if (buttons.length > 0 && cartContent) {
 
-        cart.push({ name, price });
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
 
-        console.log("Cart:", cart);
-        alert(`${name} added to cart`);
+            const productCard = button.closest(".product-card");
+            const name = productCard.querySelector("h3").innerText;
+            const price = productCard.querySelector("p").innerText;
+            const imgSrc = productCard.querySelector("img").src;
+
+            cart.push({ name, price, imgSrc });
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            addToCartUI(name, price, imgSrc);
+            
+            // this auti-opnes the cart
+            if (cartBox) cartBox.classList.add("active");
+        });
     });
-});
 
+}
+
+// ===================== ADD TO CART UI =====================
+function addToCartUI(name, price, imgSrc) {
+
+    if (!cartContent) return;
+
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("cart-box");
+
+    cartItem.innerHTML = `
+        <img src="${imgSrc}" class="cart-img">
+        <div class="cart-detail">
+            <h2 class="cart-product-title">${name}</h2>
+            <span class="cart-price">${price}</span>
+            <div class="cart-quantity">
+                <button class="decrement">-</button>
+                <span class="number">1</span>
+                <button class="increment">+</button>
+            </div>
+        </div>
+        <i class="bx bx-trash cart-remove"></i>
+    `;
+
+    cartContent.appendChild(cartItem);
+
+    updateTotal();
+}
+
+// ===================== REMOVE ITEM =====================
+if (cartContent) {
+    const box = e.target.closest(".cart-box");
+    if (!box) return;
+
+    const numberE1 = box.querySelector("number");
+    let qty = parseInt(numberE1.innerText);
+
+    if (e.target.classList.contains("increment")) {
+        numberE1.innerText = qty + 1;
+        updateTotal();
+    }
+
+    if (e.target.classList.contains("decremnt")) {
+        if (qty > 1) {
+            numberE1.innerText = qty - 1;
+        }
+        updateTotal();
+    }
+
+    if (e.target.classList.contains("cart-remove")) {
+        box.remove();
+        updateTotal();
+    }
+    
+}
+// ===================== TOTAL =====================
+function updateTotal() {
+
+    if (!cartContent) return;
+
+    const cartBoxes = document.querySelectorAll(".cart-box");
+    let total = 0;
+
+    cartBoxes.forEach(box => {
+        const priceText = box.querySelector(".cart-price").innerText.replace("R", "");
+        const quantity = box.querySelector(".number").innerText;
+
+        total += parseFloat(priceText) * parseInt(quantity);
+    });
+
+    const totalElement = document.querySelector(".total-price");
+    if (totalElement) {
+        totalElement.innerText = "R" + total.toFixed(2);
+    }
+}

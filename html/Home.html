@@ -3,52 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> THEVATIONFITNESS </title>
-    <!-- link to external CSS -->
+    <title>THEVATIONFITNESS</title>
+
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
 </head>
+
 <body>
-    
-    <section class="header">
-        <nav class="navbar">
-            <a href="Home.html" class="navbar-logo">
-                <img src="images/Fitness Logo.jpg" alt="logo"></a>
 
-            <button class="navbar-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <!----Navigation bar-->
-            <div class="nav-links" id="navLinks">
-                <ul> 
-                    <!----links for the pages-->
-                    <li><a href="Home.html">Home</a></li>
-                    <li><a href="Cardio.html">Cardio</a></li>
-                    <li><a href="Strength.html">Strength</a></li>
-                    <li><a href="Function.html">Functional</a></li>
-                    <li><a href="Contact.html">Contact</a></li>  
-                    <li><a href="cart.html"><i class="bx bx-cart"></i></a></li> 
-                </ul>
-            </div>
-        </nav>
+<!-- ================= HEADER ================= -->
+<section class="header">
+<nav class="navbar">
+    <a href="Home.html" class="navbar-logo">
+        <img src="images/Fitness Logo.jpg" alt="logo">
+    </a>
 
-        <!-----text-box-->
+    <!-- hamburger must use class navbar-toggle, not an id -->
+    <button class="navbar-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 
-        <div class="text-box">
-            <h1>Welcome To The VationFitness</h1>
-            <h2>Shop Strong. Train Stronger!</h2>
-            <p>VationFitness is built for those who take their training seriously. We provide high-quality gym equipment designed to support strength, performance, and consistency, whether you’re building a home gym or upgrading a professional training space.</p>
-        </div>
+    <div class="nav-links">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Cardio.html">Cardio</a></li>
+            <li><a href="Strength.html">Strength</a></li>
+            <li><a href="Function.html">Functional</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li>
+                <a href="#" id="cart-icon" class="cart-icon">
+                    <i class="bx bx-cart"></i>
+                    <span class="cart-item-count"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
+    <!-- TEXT -->
+    <div class="text-box">
+        <h1>Welcome To The VationFitness</h1>
+        <h2>Shop Strong. Train Stronger!</h2>
+        <p>
+            VationFitness is built for those who take their training seriously.
+            We provide high-quality gym equipment designed to support strength,
+            performance, and consistency.
+        </p>
+    </div>
+</section>
 
-    </section>
-   
-    
-<!----GYM EQUIPMENT---->
+<!-- ================= CART ================= -->
+<div class="cart">
+    <h2 class="cart-title">Your Cart</h2>
 
+    <!-- IMPORTANT: must exist for JS -->
+    <div class="cart-content"></div>
+
+    <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">R0</div>
+    </div>
+
+    <button class="btn-buy">Buy Now</button>
+    <i class="bx bx-x" id="cart-close"></i>
+</div>
+
+<!-- ================= PRODUCTS ================= -->
 <section class="products">
     <h2>Our Gym Equipments</h2>
 
@@ -56,75 +78,89 @@
 
         <div class="product-card">
             <a href="dumbell.html">
-            <img src="images/dumbell1.png" alt="Dumbells"></a>
+                <img src="images/dumbell1.png" alt="Dumbells">
+            </a>
             <h3>Dumbells</h3>
             <p>R299.99</p>
-            <button class="addToCart" data-name="Dumbells" data-price="299.99">Add To Cart</button>
+            <button class="addToCart">Add To Cart</button>
         </div>
+
         <div class="product-card">
             <a href="indoor cycle.html">
-            <img src="images/indoor cycle1.png" alt="Indoor Cycle"></a>
+                <img src="images/indoor cycle1.png" alt="Indoor Cycle">
+            </a>
             <h3>Indoor Cycle</h3>
             <p>R4999.99</p>
-            <button class="addToCart" data-name="Indoor Cycle" data-price="4999.99">Add To Cart</button>
+            <button class="addToCart">Add To Cart</button>
         </div>
+
         <div class="product-card">
             <a href="bench.html">
-            <img src="images/adjustable-bench.png" alt="Adjustable Bench"></a>
+                <img src="images/adjustable-bench.png" alt="Bench">
+            </a>
             <h3>Adjust-Bench</h3>
             <p>R2499.99</p>
-            <button class="addToCart" data-name="Adjust-Bench" data-price="2499.99">Add To Cart</button>
+            <button class="addToCart">Add To Cart</button>
         </div>
-             <div class="product-card">
-                <a href="leg press.html">
-            <img src="images/Leg Press.png" alt="Leg Press"></a>
+
+        <div class="product-card">
+            <a href="leg press.html">
+                <img src="images/Leg Press.png" alt="Leg Press">
+            </a>
             <h3>Leg Press</h3>
             <p>R9999.99</p>
-            <button class="addToCart" data-name="Leg Press" data-price="9999.99">Add To Cart</button>
-             </div>
+            <button class="addToCart">Add To Cart</button>
+        </div>
 
-             <div class="product-card">
-                <a href="treadmill.html">
-            <img src="images/threadmill.png" alt="Treadmill"></a>
+        <div class="product-card">
+            <a href="treadmill.html">
+                <img src="images/threadmill.png" alt="Treadmill">
+            </a>
             <h3>Treadmill</h3>
             <p>R14999.99</p>
-            <button class="addToCart" data-name="Treadmill" data-price="14999.99">Add To Cart</button>
+            <button class="addToCart">Add To Cart</button>
         </div>
+
         <div class="product-card">
             <a href="stairmaster.html">
-            <img src="images/stair master.png" alt="Stairmaster"></a>
+                <img src="images/stair master.png" alt="Stairmaster">
+            </a>
             <h3>Stairmaster</h3>
             <p>R14499.99</p>
-            <button class="addToCart" data-name="Stairmaster" data-price="14499.99">Add To Cart</button>
+            <button class="addToCart">Add To Cart</button>
         </div>
 
     </div>
 </section>
-<section>
-<footer class="footer">
-    <div class="footer-container">
 
-        <div class="footer-box">
+<!-------------  FOOTER -------------->
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-box">
             <h3>THE VATIONFITNESS</h3>
             <p>
                 Trusted by fitness professionals & fitness facilities across Africa for over 15 years,
                 we are your reputable gym equipment supplier.
             </p>
 
-            <div class="social-icon">
-                <a href="#" target="_blank">
+
+
+            <a href="Signup.html" class="footer-signup-btn">Sign Up</a>
+        </div>
+        <div class="social-icon">
+                <a href="" target="blank">
                     <i class='bx bxl-whatsapp'></i>
                 </a>
-                <a href="https://instagram.com/ngoakom_" target="_blank">
+
+                <a href="https://instagram.com/ngoakom_" target="blank">
                     <i class='bx bxl-instagram'></i>
                 </a>
             </div>
 
-            <a href="Signup.html" class="footer-signup-btn">Sign Up</a>
-        </div>
-
     </div>
-</footer>
+    </section>
 <script src="app.js"></script>
+
 </body>
 </html>
